@@ -1,0 +1,64 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Ajouter un avis</h4>
+                    </div>
+                    <div class="card-body">
+                        <form (ngSubmit)="saveAvis()">
+                            <div class="row">
+                                <div class="col-md-6">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Titre" type="text" [(ngModel)]="avis.titre" name="titre">
+                                  </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Description" type="text" [(ngModel)]="avis.description" name="description">
+                                  </mat-form-field>
+                                </div>
+                            </div>
+                            <button mat-raised-button type="submit" class="btn btn-danger pull-right">Ajouter</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title ">Liste des avis</h4>
+                  </div>
+                  <div class="card-body">
+                      <div class="table-responsive">
+                          <table class="table">
+                              <thead class=" text-primary">
+                                  <th>
+                                      Titre
+                                  </th>
+                                  <th>
+                                      Descritpion
+                                  </th>
+                              </thead>
+                              <tbody>
+                                <tr *ngFor="let a of avisS">
+                                    <td>{{a.titre}}</td>
+                                    <td>{{a.descritpion}}</td>
+                                    <td><button (click)="deleteAvis(a.idAvis)" class="btn btn-danger pull-right">Supprimer</button></td>
+                                </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  

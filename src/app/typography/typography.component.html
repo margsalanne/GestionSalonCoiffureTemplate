@@ -1,0 +1,55 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Ajouter une réservation</h4>
+                    </div>
+                    <div class="card-body">
+                        <form (ngSubmit)="saveReservation()">
+                            <div class="row">
+                                <div class="col-md-8">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Date" type="date" [(ngModel)]="reservation.dateResa" name="dateResa">
+                                  </mat-form-field>
+                                </div>
+                            </div>
+                            <button mat-raised-button type="submit" class="btn btn-danger pull-right">Ajouter</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title ">Liste des réservations</h4>
+                  </div>
+                  <div class="card-body">
+                      <div class="table-responsive">
+                          <table class="table">
+                              <thead class=" text-primary">
+                                  <th>
+                                      Date
+                                  </th>
+                              </thead>
+                              <tbody>
+                                <tr *ngFor="let r of reservations">
+                                    <td>{{r.dateResa}}</td>
+                                    <td><button (click)="deleteReservation(u.idReservation)" class="btn btn-danger pull-right">Delete</button></td>
+                                </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  
