@@ -9,20 +9,20 @@ import { AvisService } from 'app/services/avis.service';
 })
 export class TableListComponent implements OnInit {
 
-  avisS!:any[];
+  aviss!:any[];
   avis:Avis=new Avis(); 
   constructor(private avisService:AvisService){
   }
   ngOnInit(): void {
-    this.findAllAvisS();
+    this.findAllAviss();
   }
-  findAllAvisS(){
-    this.avisService.findAll().subscribe(data => {this.avisS = data});
+  findAllAviss(){
+    this.avisService.findAll().subscribe(data => {this.aviss = data});
   }
   saveAvis(){
     this.avisService.save(this.avis).subscribe(
       () => {
-        this.findAllAvisS();
+        this.findAllAviss();
         this.avis = new Avis();
       }
     )
@@ -30,7 +30,7 @@ export class TableListComponent implements OnInit {
   deleteAvis(id:number){
     this.avisService.delete(id).subscribe(
       () => {
-        this.findAllAvisS();
+        this.findAllAviss();
       }
     )
   }

@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AvisService {
-  private BASE_URL = "http://localhost:8080/avis"
+  private BASE_URL = "http://localhost:8080/aviss"
   constructor(private httpClient:HttpClient) { }
     public findAll():Observable<any>{
       return this.httpClient.get(this.BASE_URL)
